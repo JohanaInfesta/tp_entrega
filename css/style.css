@@ -3,55 +3,19 @@ body{
     background-image:url(../img/fondoestrellado.jpg);
 }
 /*---- navbar + titulo ----*/
-.titulo container-fluid {
-    font-family: 'Nixie One', cursive;
-    font-size:1.7em;
-    margin: 5% 0 0 5%;
-    float:left;
-}
-h1{
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.67em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    font-weight: bold
-}
 .navbar{
     background-image: url(../img/fondoestrellado.jpg);
     border:transparent;
 }
-.button {
-    background-color:#75F900;
-    color:black;
-    border-radius: 1.50rem;
-    font-family: 'Nixie One', cursive;
-    box-shadow: 2px 2px 2px black;
-    font-weight: 700;
-
-
+.navbar-nav{
+    float: right;
+}
+.navbar-header{
+    
 }
 /*--- fin navbar + titulo ---*/
-
-/*---- home tabla ----*/
-.entry-content table, .comment-content table {
-    font-size: 14px;
-    line-height: 1.2857142857;
-    margin-bottom: 24px;
-    }
-td{
-    display: table-cell;
-    border-collapse: separate;
-    float: left;
-    width: 33%;
-    display: block;
+/*--- mangas ---*/
+.media{
+    zoom:1.3;
+    margin-left: 5;
 }
-
-table {
- 
-    border-spacing: 0;
-    border-width: 1px 0 0 1px;
-    margin-bottom: 24px;
-    width: 100%;
-}
-
-/*--- fin home tabla ---*/
