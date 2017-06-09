@@ -76,3 +76,8 @@ a:focus, a:hover, a:active{ /*--saque el a porque me afecto a todos los a href *
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
+/*--- mangas---*/
+.media-object{
+    width: 159px;
+    height: 261px;
+}
