@@ -81,3 +81,7 @@ a:focus, a:hover, a:active{ /*--saque el a porque me afecto a todos los a href *
     width: 159px;
     height: 261px;
 }
+.portada{
+    width: 159px;
+    height: 289px;
+}
