@@ -9,16 +9,30 @@ body{
 }
 .navbar-nav{
     float: right;
+    border: 0;
+    color: black;
+    font-family: 'Coming Soon', cursive;
 }
-.navbar-header{
-    
+.navbar-default .navbar-link{
+    color: #75F900;
+    font-family: 'Coming Soon', cursive;
+    font-size: 2em;
 }
-/*--- fin navbar + titulo ---*/
+   
 /*--- mangas ---*/
 .media{
     zoom:1.3;
     margin-left: 5;
 }
+.media-object{
+    width: 159px;
+    height: 261px;
+}
+.portada{
+    width: 159px;
+    height: 289px;
+}
+
 /*--- Footer ---*/
 
 .row {
@@ -36,7 +50,7 @@ body{
 
 .footer-navigation h3{
     margin: 0;
-    font:'Permanent Marker', cursive;
+    font-family:'Permanent Marker', cursive;
     margin-bottom: 20px;
     color: #75F900;
     font-size: 24px;
@@ -75,13 +89,4 @@ p{
 a:focus, a:hover, a:active{ /*--saque el a porque me afecto a todos los a href */
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
-}
-/*--- mangas---*/
-.media-object{
-    width: 159px;
-    height: 261px;
-}
-.portada{
-    width: 159px;
-    height: 289px;
 }
