@@ -7,7 +7,7 @@
 /*    3.C. Backgrounds */
 /*    3.D. Foros */
 /* 4. Footer */
-/**/
+/* 5. Ventana Emergente*/
 
 
 /*--- 1. Selectores universales ---*/
@@ -17,18 +17,28 @@ body{
   background-image:url(../img/fondoestrellado.jpg);
 }
 
+a, a:visited{
+    color:#75F900;
+}
+
+a:hover{
+    color:#ff8900;
+}
+
 /*--- 2. Header ---*/
 
 .navbar {
   background-image: url(../img/fondoestrellado.jpg);
   border: transparent;
-  margin: 25px 0 55px 0;
+  margin: 5% 0 15% 0;
 }
 .navbar-nav {
-  float: right;
-  border: 0;
+    border: 0;
+    position: absolute;
+    right: 0;
+    margin: 55px 20px 0 0;
 }
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav li a {
   font-weight: 900;
   font-size: 25px;
   font-family: 'Coming Soon', cursive;
@@ -40,8 +50,8 @@ body{
   font-size: 7vw;
 }
 
-.navbar-default .navbar-link:hover, .navbar-default .navbar-nav>li>a:hover {
-  color:#75F900;
+.navbar-default .navbar-link:hover, .navbar-default .navbar-nav li a:hover, .navbar-default div ul li a:active {
+  color:#75F900 !important;
 }
 
 /*--- 3. Conteiners-cuerpo ---*/
@@ -72,7 +82,12 @@ body{
   width: 159px;
   height: 261px;
 }
-
+.texto-detalle{
+    padding:8% 0 5% 0;
+    font-family: 'Coming Soon', cursive;
+    font-weight: bold;
+    color:#fff;
+}
 
 /*---    3.C. Backgrounds ---*/
 
@@ -88,7 +103,16 @@ body{
   width: 426px;
   height: 688px;
 }
+/*---    3.D. Foros ---*/
 
+.cuerpo-foros ul li a{
+    font-family:'Permanent Marker', cursive;
+    font-size: 2.5rem;
+}
+.cuerpo-foros ul li{
+    display: block;
+    margin:3px 0 3px 0;
+}
 /*--- 4. Footer ---*/
 
 .row {
@@ -200,4 +224,25 @@ div.social-links {
 }
 .social-links a:hover{
   color: #75f900;
+}
+
+/*--- 5. Ventana Emergente ---*/
+
+@media (max-width:500px) {
+    .portada-emergente{
+        display: block;
+    }
+}
+
+.contenido-emergente {
+    background-image: url(../img/fondoestrellado.jpg);
+    color:antiquewhite;
+    font-family:'Coming Soon', cursive;
+    font-weight: bold;
+
+}
+
+.boton-cerrar-emergente{
+    color:aqua;
+    font-size: 4rem;
 }
