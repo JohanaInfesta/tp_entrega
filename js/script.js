@@ -11,7 +11,7 @@ $(document).ready(function(){
     navigate('../html/portadas.html');
 });
 
-//Hace un llamado a AJAX le pide la pagina manga.html y por ID y por medio de una ventana emergente devuelve solo el contenido pedido
+//Hace un llamado a AJAX le pide la pagina manga.html con ID y por medio de una ventana emergente devuelve solo el contenido pedido
 function openManga(id) {
     $.get('../html/manga.html', function( data ) {
         let body = $('.modal-body');
