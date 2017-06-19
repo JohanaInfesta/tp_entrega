@@ -6,31 +6,45 @@
 /*    3.B. Mangas */
 /*    3.C. Backgrounds */
 /*    3.D. Foros */
+/*    3.E. TopTen */
+/*        3.E.1. .col-left*/
+/*        3.E.1. .col-rigth*/
 /* 4. Footer */
 /* 5. Ventana Emergente*/
-
-
 /*--- 1. Selectores universales ---*/
 
-body{
-  color:#75F900;
-  background-image:url(../img/fondoestrellado.jpg);
+body {
+    color: #75F900;
+    background-image: url(../img/fondoestrellado.jpg);
+    font-family: 'Coming Soon', cursive;
 }
-
-a, a:visited{
-    color:#75F900;
+a,
+a:visited {
+    color: #75F900;
 }
-
-a:hover{
-    color:#ff8900;
+a:hover {
+    color: #ff8900;
 }
-
 /*--- 2. Header ---*/
 
 .navbar {
-  background-image: url(../img/fondoestrellado.jpg);
-  border: transparent;
-  margin: 5% 0 15% 0;
+    background-image: url(../img/fondoestrellado.jpg);
+    border: transparent;
+    margin: 5% 0 15% 0;
+}
+@media (max-width:767px) {
+    ul.nav.navbar-nav {
+        position: inherit;
+        text-align: center;
+    }
+    .navbar-default .navbar-nav li a {
+        font-size: 20px;
+    }
+}
+@media (min-width:767px) {
+    .navbar-default .navbar-nav li a {
+        font-size: 30px;
+    }
 }
 .navbar-nav {
     border: 0;
@@ -39,217 +53,252 @@ a:hover{
     margin: 55px 20px 0 0;
 }
 .navbar-default .navbar-nav li a {
-  font-weight: 900;
-  font-size: 25px;
-  font-family: 'Coming Soon', cursive;
-  color: #ff8900;
+    font-weight: 900;
+    font-family: 'Coming Soon', cursive;
+    color: #ff8900;
 }
 .navbar-default .navbar-link {
-  color: #75F900;
-  font-family: 'Permanent Marker', cursive;
-  font-size: 7vw;
+    color: #75F900;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 7vw;
 }
-
-.navbar-default .navbar-link:hover, .navbar-default .navbar-nav li a:hover, .navbar-default div ul li a:active {
-  color:#75F900 !important;
+.navbar-default .navbar-link:hover,
+.navbar-default .navbar-nav li a:hover,
+.navbar-default div ul li a:active {
+    color: #75F900 !important;
 }
-
 /*--- 3. Conteiners-cuerpo ---*/
-
 /*---    3.A. Index ---*/
 
 .cuerpo-index {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 .portada img {
-  width: 159px;
-  height: 289px;
-  display: inline-block;
+    width: 159px;
+    height: 289px;
+    display: inline-block;
 }
 .name {
-  font-weight: bolder;
-  text-align: center;
+    font-weight: bolder;
+    text-align: center;
 }
-
 /*---    3.B. Mangas ---*/
 
-.media{
-  zoom:1.3;
-  margin-left: 5;
+.media {
+    zoom: 1.3;
+    margin-left: 5;
 }
-.media-object{
-  width: 159px;
-  height: 261px;
+.media-object {
+    width: 159px;
+    height: 261px;
 }
-.texto-detalle{
-    padding:8% 0 5% 0;
+.texto-detalle {
+    padding: 8% 0 5% 0;
     font-family: 'Coming Soon', cursive;
     font-weight: bold;
-    color:#fff;
+    color: #fff;
 }
-
 /*---    3.C. Backgrounds ---*/
 
-.carousel-inner{
-  left: 50%;
-  z-index: 15;
-  width: 60%;
-  padding-left: 0;
-  margin-left: -30%;
-
+.carousel-inner {
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
 }
-.item .imagen{
-  width: 100%;
+.item .imagen {
+    width: 100%;
 }
-.carousel-control{
+.carousel-control {
     width: 35px;
     height: 40px;
     margin: auto;
 }
-.imagen-background{
+.imagen-background {
     margin: auto;
 }
 /*---    3.D. Foros ---*/
 
-.cuerpo-foros ul li a{
-    font-family:'Permanent Marker', cursive;
+.cuerpo-foros ul li a {
+    font-family: 'Permanent Marker', cursive;
     font-size: 2.5rem;
 }
-.cuerpo-foros ul li{
+.cuerpo-foros ul li {
     display: block;
-    margin:3px 0 3px 0;
+    margin: 3px 0 3px 0;
+}
+/*---    3.E. TopTen ---*/
+
+.tabla-infoScroll {
+    text-align: center;
+    font-size: 3vw;
+}
+/*        3.E.1. .col-left*/
+
+.tabla-topten {
+    margin: auto;
+    font-weight: bold;
+    border-collapse: collapse;
+}
+.tabla-topten thead {
+    padding: 2px 0 2px 0;
+    font-size: 1.2em;
+    background-color: #FF8900;
+    color: #fff;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 100;
+    border: 5px #75F900 solid;
+}
+.tabla-topten thead tr th {
+    padding: 10px 25px 10px 25px;
+    text-align: center;
+}
+.tabla-topten tbody {
+    font-weight: bolder;
+    font-size: 1.2em;
+    text-align: center;
+}
+.tabla-topten th,
+.tabla-topten td {
+    border: 5px #75F900 solid;
+}
+.tabla-topten tbody tr td img {
+    width: 159px;
+    height: 261px;
+}
+.tabla-topten tbody tr td{
+    vertical-align: middle;
+}
+.table-responsive {
+    border: none;
+    overflow-y: hidden;
+}
+/*        3.E.1. .col-right*/
+
+.col-right {
+    text-align: center;
+    font-weight: bolder;
+}
+.btn-cargarDatos,
+.btn-resetDatos {
+    display: list-item;
+    margin: auto;
+}
+.col-right form h3 {
+    color: #ff8900;
+    font-family: 'Permanent Marker', cursive;
+}
+.col-right form input {
+    margin-bottom: 10px;
 }
 /*--- 4. Footer ---*/
 
-.row {
-  margin-right: 15px;
-  margin-left: 15px;
-}
-@media (min-width:992px) .col-md-4 {
-  width: 33.33333333%;
-  float: left;
-}
-@media (min-width:768px) .col-sm-6 {
-  width: 70%;
-  float: left;
-}
-footer {
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  width: 100%;
-  text-align: left;
-  font-family:'Coming Soon', cursive;
-  padding: 55px 50px;
-  margin-top: 80px;
-  bottom: 0;
-  color: #75F900;
-  font-weight: bolder;
-  text-align: center;
-
-}
-.footer-navigation a h3 {
-  margin: 0;
-  font-family: 'Permanent Marker', cursive;
-  margin-bottom: 20px;
-  color: #75f900;
-  font-size: 35px;
-}
-.footer-navigation a {
-  text-decoration: none;
-  color: #fff;
-}
-.footer-navigation h3 span {
-  color: #ff8900;
-}
-.footer-navigation p.links a {
-  color: #fff;
-  text-decoration: none;
-}
-.footer-navigation p.company-name {
-  color: #fff;
-  font-size: 14px;
-  font-weight: normal;
-  margin-top: 20px;
+.footer .row {
+    margin-right: 15px;
+    margin-left: 15px;
 }
 @media (max-width:767px) {
-  .footer-contacts {
-    margin: 30px 0;
-  }
+footer.container.footer{
+    margin-top: 40px;
+    padding-top:30px;
 }
-.footer-contacts p {
-  display: inline-block;
-  color: #ffffff;
-  vertical-align: middle;
 }
-.footer-contacts p a {
-  color: #5383d3;
-  text-decoration: none;
+footer {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-family: 'Coming Soon', cursive;
+    padding: 55px 50px;
+    margin-top: 80px;
+    bottom: 0;
+    color: #75F900;
+    font-weight: bolder;
+    text-align: center;
 }
-.fa.footer-contacts-icon {
-  background-color: #33383b;
-  color: #fff;
-  font-size: 18px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 38px;
-  margin: 10px 15px 10px 0;
+.footer-navigation a h3 {
+    margin: 0;
+    font-family: 'Permanent Marker', cursive;
+    margin-bottom: 20px;
+    color: #75f900;
+    font-size: 35px;
 }
-span.new-line-span {
-  display: block;
-  font-weight: normal;
-  display: block;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 2;
+.footer-navigation a {
+    text-decoration: none;
+    color: #fff;
+}
+.footer-navigation p.company-name {
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 20px;
+}
+@media (max-width:767px) {
+    .footer-contacts {
+        margin: 30px 0;
+    }
 }
 .footer-about h4 {
-  display: block;
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 20px;
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
-.form-control, .btn-default{
-  margin: 10px 0 10px 0;
+.footer .form-control,
+.footer .btn-default {
+    margin: 10px 0 10px 0;
 }
 div.social-links {
-  margin-top:20px;
-  color:#fff;
+    margin-top: 20px;
+    color: #fff;
 }
 .social-links a {
-  display:inline-block;
-  cursor:pointer;
-  border-radius:2px;
-  color:#ff8900;
-  text-align:center;
-  line-height:1;
-  margin-right:5px;
-  margin-bottom:5px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #ff8900;
+    text-align: center;
+    line-height: 1;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
-.social-links a:hover{
-  color: #75f900;
+.social-links a:hover {
+    color: #75f900;
 }
-
 /*--- 5. Ventana Emergente ---*/
 
 @media (max-width:500px) {
-    .portada-emergente{
+    .portada-emergente {
         display: block;
     }
 }
-
 .contenido-emergente {
     background-image: url(../img/fondoestrellado.jpg);
-    color:antiquewhite;
-    font-family:'Coming Soon', cursive;
+    color: antiquewhite;
+    font-family: 'Coming Soon', cursive;
     font-weight: bold;
-
+}
+.boton-cerrar-emergente {
+    color: aqua;
+    font-size: 4rem;
+}
+.more {
+    font-family: 'Permanent Marker', cursive;
+    font-size: large;
+    font-weight: 300;
+}
+.modal-title {
+    font-size: 2rem;
 }
 
-.boton-cerrar-emergente{
-    color:aqua;
-    font-size: 4rem;
+.loading {
+    display: table-row;
+    height: 100px;
+}
+.loading i {
+    position: absolute;
+    left: 50%;
 }

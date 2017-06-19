@@ -1,1 +1,43 @@
-<!-- deja que yo despues me encargo de la tabla y subir los datos a la base de datos. Anto -->
+<article class="container cuerpo-topten js-topten" onload="renderList()">
+    <section class="row">
+        <div class="row hidden-md hidden-lg tabla-infoScroll">
+            <i class="col-xs-offset-1 col-xs-3 fa fa-hand-o-left fa-2x"></i>
+            <span class="col-xs-4">Deslice para ver más</span>
+            <i class="col-xs-3 fa fa-hand-o-right fa-2x"></i>
+        </div>
+        <article class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-left table-responsive">
+            <table class=" table tabla-topten">
+                <thead>
+                    <tr>
+                        <th>Ranking</th>
+                        <th class="hidden-xs hidden-sm">Portada</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Categoría</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </article>
+        <aside class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-right">
+            <form>
+                <h3>Ingresar nueva posición en el ranking</h3>
+                <p>¿Cuáles es la posición en el ranking?</p>
+                <input class="form-control js-input-position" type="text" placeholder="Posición">
+                <p>Subir la portada del manga</p>
+                <input class="form-control js-input-image" type="text" placeholder="url de la imagén">
+                <p>¿Cuál es el título?</p>
+                <input class="form-control js-input-title" type="text" placeholder="Título">
+                <p>¿Quién es el autor?</p>
+                <input class="form-control js-input-author" type="text" placeholder="Autor">
+                <p>¿Cuáles es la categoría?</p>
+                <input class="form-control js-input-category" type="text" placeholder="ATP/+11/+16/+18">
+                <button class="btn-cargar-datos btn btn-default" type="button" onclick="addRanking()">Cargar datos</button>
+                <h3>Recargar todos las posiciones del Ranking</h3>
+                <button class=" btn-reset-datos btn btn-default" type="button" onclick="initRanking()">RESET</button>
+            </form>
+        </aside>
+    </section>
+</article>
