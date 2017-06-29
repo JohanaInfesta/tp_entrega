@@ -1,3 +1,16 @@
+'use strict';
+
+//Llama a la funcion navigate con el contenido de portadas.html cuando inicializa la página
+$(document).ready(function () {
+    navigate('../html/portadas.html');
+});
+
+//Alert del newsletter
+function cleanNewsletter(){
+    $('.js-input-newsletter').val('');
+    alert('¡Gracias por suscribirte a nuestro newsletter!');
+}
+
 //Cargar contenido html en el index
 function navigate(url) {
     $.get(url, function (data) {
@@ -11,27 +24,6 @@ function navigate(url) {
                 }
             });
         }
-    });
-}
-
-//Llama a la funcion navegaite con el contenido de portadas.html cuando inicializa la página
-$(document).ready(function () {
-    navigate('../html/portadas.html');
-});
-
-function renderList() {
-    $('.tabla-topten tbody').html('<div class="loading"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></div>');
-    getRankingList().then(function(list){
-        
-        $('.tabla-topten tbody').html('');
-        
-        list.sort(function(a, b){
-            return a.position - b.position;
-        });
-        
-        list.forEach(function(ranking){
-            renderRanking(ranking);
-        });
     });
 }
 
@@ -52,6 +44,24 @@ function openManga(id) {
 }
 
 //js para topten.html
+
+//renderList recibe la lista de getRankingList  y por medio de la funcion sort la ordena de forma ascendente o creciente y luego por medio de la funcion renderRanking la renderiza en la página.
+function renderList() {
+    $('.tabla-topten tbody').html('<div class="loading"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></div>');
+    getRankingList().then(function(list){
+        
+        $('.tabla-topten tbody').html('');
+        
+        list.sort(function(a, b){
+            return a.position - b.position;
+        });
+        
+        list.forEach(function(ranking){
+            renderRanking(ranking);
+        });
+    });
+}
+
 
 //variables globales para las funciones relacionadas a topten.html
 let groupId = 35;
@@ -97,7 +107,6 @@ function deleteRanking(id) {
 function cleanList() {
     return new Promise(function (resolve, reject) {
         getRankingList().then(function (list) {
-            console.log(list);
             let promises = [];
             list.forEach(function (item) {
                 promises.push(deleteRanking(item.id));
@@ -221,9 +230,12 @@ function renderRanking(ranking){
     });
 }
 
+//Lee la información ingresada en los input del js-form-add, y crea los elementos mediante un llamodo a la función createRanking
 function addRanking(){
     
-    let elemento = {
+    $('.btn-cargar-datos').attr('disabled', true);//desbilita el boton una vez que se activo.
+    
+    let element = {
         position: $('.js-input-position').val(),
         image: $('.js-input-image').val(),
         title: $('.js-input-title').val(),
@@ -231,15 +243,31 @@ function addRanking(){
         category: $('.js-input-category').val(),
     }
     
-    $('.js-input-position').val('');
-    $('.js-input-image').val('');
-    $('.js-input-title').val('');
-    $('.js-input-author').val('');
-    $('.js-input-category').val('');
-    createRanking(elemento).then(renderList);
+    let isComplete = true;
+    
+    //si algun campo, field, del element[field] está vacio, muestra un alert y le da el valor false a la variable isComplete.
+    for (let field in element) { 
+        if (!element[field]) {
+            alert('Todos los campos son obligatorios.');
+            isComplete = false;
+            break;
+        }
+    }
+    
+    //si isComplete es true, los input se reinician y llama a la función createRanking que hace un callback a una funcion anonima que llama a renderList y vuelve a habilitar el boton .btn-cargar-datos.
+    if (isComplete) {
+        $('.js-input-position').val('');
+        $('.js-input-image').val('');
+        $('.js-input-title').val('');
+        $('.js-input-author').val('');
+        $('.js-input-category').val('');
+        createRanking(element).then(function(){
+            renderList();
+            $('.btn-cargar-datos').attr('disabled', false);
+        });
+//si isComplete es false, habilita el boton, .btn-cargar-datos, sin enviar el elemento al servicio Rest, ni ireiniciar los input.
+    } else {
+        $('.btn-cargar-datos').attr('disabled', false);
+    }
 }
 
-function cleanNewsletter(){
-    $('.js-input-newsletter').val('');
-    alert('¡Gracias por suscribirte a nuestro newsletter!');
-}
